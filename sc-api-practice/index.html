@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>SC API CALL PRACTICE</title>
+
+    <style>
+
+    body {
+      font-family: helvetica, sans-serif;
+      width: 350px;
+    }
+
+    label {
+      font-weight: bold;  
+    }
+
+    div {
+      padding-bottom: 20px;
+    }
+
+    input {
+      padding: 5px;
+      width: 150px;
+    }
+
+    input[type="password"] {
+      font: bold 100% "Lucida Sans Unicode", sans-serif;
+    }
+
+    </style>
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Get Token -->
+    <div>
+      <label for="username">Enter username:</label>
+      <input id="username" type="text" placeholder="">
+      <br>
+      <label for="password">Enter password:</label>
+      <input id="password" type="password" placeholder="">
+    </div>
+    <div>
+      <button id="submit">GET TOKEN</button>
+    </div>
+
+    <!-- List Groups -->
+    <button id="getGroups">GET GROUPS</button>
+    <div>
+      <table id="groups">
+        <tr>
+          <th>Group Name</th>
+          <th>Group Type</th>
+          <th>List Users</th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- List Users In Group -->
+    <div>
+      <table id="users">
+        <tr>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Status</th>
+        </tr>
+      </table>
+    </div>    
+  </body>
+</html>
