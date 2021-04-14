@@ -7,7 +7,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Results from './components/HistoryPage/History'
 
 const App = () => {
-    sessionStorage.setItem('BASE_URL', "https://sandpit-api.safetyculture.io")
+    sessionStorage.setItem('BASE_URL', "https://api.safetyculture.io")
 
     return(
         <BrowserRouter>

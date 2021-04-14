@@ -18,9 +18,12 @@ const Login = () => {
     }
 
     const sendLoginRequest = async () => {
-        setApiToken(await getAccessToken(usernameValue, passwordValue))
-        setUsernameValue('')
-        setPasswordValue('')
+        setApiToken("264ba9e00c971d4a9cbc986244a1ee4c8dc45df26bc940b2902aa091ed38d7de")
+        sessionStorage.setItem('apiToken', "264ba9e00c971d4a9cbc986244a1ee4c8dc45df26bc940b2902aa091ed38d7de")
+
+        // setApiToken(await getAccessToken(usernameValue, passwordValue))
+        // setUsernameValue('')
+        // setPasswordValue('')
     }
 
     const handleLogout = () => {

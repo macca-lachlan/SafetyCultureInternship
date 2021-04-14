@@ -82,7 +82,7 @@ const AutomatedTest = () => {
 
       const intervalFunc = async () => {
         // if data for charts goes missing, grab from session storage (happened on stop tests then restart)
-        if (acceptData !== JSON.parse(sessionStorage.getItem('acceptData')) && sessionStorage['acceptData']) {
+        if (rejectData !== JSON.parse(sessionStorage.getItem('rejectData')) && sessionStorage['rejectData']) {
           acceptData = JSON.parse(sessionStorage.getItem('acceptData'))
           rejectData = JSON.parse(sessionStorage.getItem('rejectData'))
           groupData = JSON.parse(sessionStorage.getItem('groupData'))
@@ -118,7 +118,7 @@ const AutomatedTest = () => {
   const getData = async () => {
     return (
       Promise.all([
-        await getLoginDataPoint(true),
+        await getLoginDataPoint(false),
         await getLoginDataPoint(false),
         await getLastDataPointTime('groups'),
         await getLastDataPointTime('users'),
@@ -384,12 +384,12 @@ const AutomatedTest = () => {
           {/* Login Chart */}
           <SideChart data={getLoginChartState} title={'Login Time'} />
           {chartHasData && (<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
-            <div>
+            {/* <div>
               <h6 className="tooltipFetch">Login Accept<span className="tooltiptext">/auth</span></h6>
               <div>Average: {avgTimesData['access_token_true'][0]['avg']} ms</div>
               <div>Worst: {worstTimesData['access_token_true'][0]['time']} ms @ {worstTimesData['access_token_true'][0]['date_time']}</div>
               <div>Best: {bestTimesData['access_token_true'][0]['time']} ms @ {bestTimesData['access_token_true'][0]['date_time']}</div>
-            </div>
+            </div> */}
 
             <br />
 
@@ -467,7 +467,7 @@ async function runTests() {
 // Used to fix a reload bug
 window.onbeforeunload = () => {
   sessionStorage.removeItem('intervalID')
-  sessionStorage.removeItem('acceptData')
+  sessionStorage.removeItem('rejectData')
 }
 
 export default AutomatedTest

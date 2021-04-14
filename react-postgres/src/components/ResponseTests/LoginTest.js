@@ -5,7 +5,8 @@ export async function testLoginTime() {
     if (!sessionStorage['apiToken']) {
         alert("You need to login successfully at least once")
     } else {
-        await getAccessToken(sessionStorage.getItem('username'), sessionStorage.getItem('password'))
+        // await getAccessToken(sessionStorage.getItem('username'), sessionStorage.getItem('password'))
+        await getAccessToken("random@safetyculture.io", "invalid")
         await getAccessToken("random@safetyculture.io", "invalid")
     }
 }
